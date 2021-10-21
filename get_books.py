@@ -154,6 +154,7 @@ def scrape_book(book_id):
     return {'book_id_title':        book_id,
             'book_id':              get_id(book_id),
             'book_title':           ' '.join(soup.find('h1', {'id': 'bookTitle'}).text.split()),
+            'book_cover':           soup.find('img', id='coverImage')
             "book_series":          get_series_name(soup),
             "book_series_uri":      get_series_uri(soup),
             'isbn':                 get_isbn(soup),
